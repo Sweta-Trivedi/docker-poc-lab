@@ -51,6 +51,41 @@ All the nodes must be running:
   <img width="1205" alt="Screenshot 2025-02-06 at 10 04 28 AM" src="https://github.com/user-attachments/assets/4b370a25-3b33-4f8f-a047-de91637659d7" />
   <img width="639" alt="Screenshot 2025-02-06 at 10 05 05 AM" src="https://github.com/user-attachments/assets/7619847b-2d20-441a-84c5-529cef054435" />
 
+### 3. List all docker containers
+
+big-data-1 % docker ps
+
+CONTAINER ID   IMAGE                                                    COMMAND                  CREATED       STATUS                       PORTS                                NAMES
+
+e72b728ccc50   bde2020/hadoop-nodemanager:2.0.0-hadoop3.2.1-java8       "/entrypoint.sh /run…"   6 weeks ago   Up About an hour (healthy)   0.0.0.0:8042->8042/tcp               hadoop-nodemanager-1
+
+a7fdf804e468   bde2020/hadoop-historyserver:2.0.0-hadoop3.2.1-java8     "/entrypoint.sh /run…"   6 weeks ago   Up 36 minutes (healthy)      0.0.0.0:8188->8188/tcp               hadoop-historyserver-1
+
+131f9db98d30   bde2020/hadoop-resourcemanager:2.0.0-hadoop3.2.1-java8   "/entrypoint.sh /run…"   6 weeks ago   Up About an hour (healthy)   0.0.0.0:8088->8088/tcp               hadoop-resourcemanager-1
+
+24af0141e6ff   bde2020/hadoop-datanode:2.0.0-hadoop3.2.1-java8          "/entrypoint.sh /run…"   6 weeks ago   Up About an hour (healthy)   9864/tcp, 0.0.0.0:50075->50075/tcp   hadoop-datanode-1
+
+01a0b5b213b1   bde2020/hadoop-namenode:2.0.0-hadoop3.2.1-java8          "/entrypoint.sh /run…"   6 weeks ago   Up About an hour (healthy)   0.0.0.0:9870->9870/tcp               hadoop-namenode-1
+
+
+### 4. login to docker bash namenode
+
+hadoop % docker exec -it 01a0b5b213b133c701511e3deb2160774207551ed99c5c84911059236b987c62 /bin/bash
+
+root@01a0b5b213b1:/# ls
+
+KEYS  dev	     hadoop	  lib	 mnt   root    sbin  tmp
+
+bin   entrypoint.sh  hadoop-data  lib64  opt   run     srv   usr
+
+boot  etc	     home	  media  proc  run.sh  sys   var
+
+root@01a0b5b213b1:/# cd opt
+
+root@01a0b5b213b1:/opt# ls
+
+hadoop-3.2.1
+
 
 
 
