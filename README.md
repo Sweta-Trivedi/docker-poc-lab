@@ -19,6 +19,7 @@ Clone this repository to your local machine
 cd big-data-1
 
 hadoop % ls
+
 alice.txt		hadoop.env		words.txt
 config			mapred-site.xml
 docker-compose.yaml	test.sh
