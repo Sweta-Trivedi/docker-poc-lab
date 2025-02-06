@@ -18,13 +18,13 @@ Clone this repository to your local machine
 
 cd big-data-1
 
-ls
 hadoop % ls
 alice.txt		hadoop.env		words.txt
 config			mapred-site.xml
 docker-compose.yaml	test.sh
 
 hadoop % docker-compose up -d
+
 WARN[0000] network hbase: network.external.name is deprecated in favor of network.name 
 [+] Running 5/5
  ⠿ Container hadoop-namenode-1         Ru...                               0.0s
